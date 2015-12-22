@@ -2,6 +2,9 @@
 //  Global Vars  // Keep to a minimum!!
 ///////////////////
 
+// NO GLOBAL VARIABLES!!!
+
+
 // Async function that gets the data...eventually
 function getStreamData(){
 $.getJSON('http://www.freecodecamp.com/news/hot').then(function(data) {
@@ -18,8 +21,8 @@ function updateHTML(data){
 
  for (storyIndex in data){
   if (data[storyIndex] !== null){
-  var story = data[storyIndex];
-    document.getElementById('storyContainer').innerHTML += "<div class='well story col-sm-4'><img class='storyImage' src='"+story.author.picture+"'><img><div class='storyText'>" +story.author.username + " wrote <a href='"+story.link+"'>"+ story.headline+ " </a> and it has " + story.upVotes.length  +" upvotes </div></div>";
+    var story = data[storyIndex];
+    document.getElementById('storyContainer').innerHTML += "<div class='well story col-sm-4'><img class='storyImage' src='"+story.author.picture+"'><img><div class='storyText'><b>" +story.author.username + "</b> wrote <a href='"+story.link+"'>"+ story.headline+ " </a> and it has " + story.upVotes.length  +" upvotes </div></div>";
   }
 
 }
